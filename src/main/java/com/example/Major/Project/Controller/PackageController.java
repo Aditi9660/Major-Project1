@@ -81,16 +81,17 @@ public class PackageController extends BaseHandler {
 
         // Check if tracking already exists
         TrackingDTO trackingDTO = packageService.getTrackingByPackageId(packageId);
-        String trackingNo;
 
+
+        String TrackingNo;
         if (trackingDTO == null) {
-            trackingNo = generateTrackingNo();
+            TrackingNo = generateTrackingNo();
             trackingDTO = new TrackingDTO();
-            trackingDTO.setTrackingNo(trackingNo);
+            trackingDTO.setTrackingNo(TrackingNo);
             trackingDTO.setPackageId(packageId);
             packageService.saveTracking(trackingDTO);
         } else {
-            trackingNo = trackingDTO.getTrackingNo();
+            TrackingNo = trackingDTO.getTrackingNo();
         }
 
         // Retrieve package details
@@ -101,7 +102,7 @@ public class PackageController extends BaseHandler {
 
         model.addAttribute("packageDTO", packageDTO);
         model.addAttribute("deliveryCost", packageDTO.getDeliveryCost());
-        model.addAttribute("trackingNo", trackingNo);
+        model.addAttribute("trackingNo", TrackingNo);
         model.addAttribute("PaymentType", PaymentType.values());
 
         return "Payment";
@@ -144,7 +145,6 @@ public class PackageController extends BaseHandler {
             }
         }
 
-        // ✅ Only remove latestPackageId if no more packages are left
         if (packageIds == null || packageIds.isEmpty()) {
             session.removeAttribute("latestPackageId");
             System.out.println("Removed latestPackageId from session.");

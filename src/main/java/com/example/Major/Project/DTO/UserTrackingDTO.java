@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class UserTrackingDTO {
     private Long userId;
     private String username;
-    private String trackingNo;
+    private String TrackingNo;
     private Status deliveryStatus;
     private Long packageId;
     private DeliveryType deliveryType;

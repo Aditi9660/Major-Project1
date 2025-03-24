@@ -174,16 +174,17 @@
             <div class="col-lg-6">
                 <div class="tracking-form">
                     <h3 class="text-dark mb-4">Track Your Package</h3>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control form-control-lg" placeholder="Enter tracking number">
-                        <button class="btn btn-custom" type="button">Track Now</button>
-                        <div th:if="${errormessage}" class="alert alert-danger" role="alert">
-                            <p th:text="${errormessage}"></p>
+                    <form th:action="@{/home/tracking}" method="get">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control form-control-lg" placeholder="Enter tracking number" name="TrackingNo" required>
+                            <button class="btn btn-custom" type="submit">Track Now</button>
                         </div>
-
+                    </form>
+                    <div th:if="${errormessage}" class="alert alert-danger" role="alert">
+                        <p th:text="${errormessage}"></p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
         </div>
     </div>
 </section>

@@ -169,7 +169,7 @@ public class PackageService extends BaseHandler {
         Package p = packageRepository.findById(packageId)
                 .orElseThrow(() -> new RuntimeException("Package not found"));
 
-        // ✅ Ensure pickUpDate and paymentType are updated correctly
+
         if (packageDTO.getPickUpDate() != null) {
             p.setPickUpDate(packageDTO.getPickUpDate());
         }

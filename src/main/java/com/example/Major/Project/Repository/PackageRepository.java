@@ -11,6 +11,5 @@ import java.util.Optional;
 @Repository
 public interface PackageRepository extends JpaRepository<Package, Long> {
     Package findLatestPackageByUser(Optional<User> user);
-    TrackingDTO findByTrackingNo(String TrackingNo);
 
 }

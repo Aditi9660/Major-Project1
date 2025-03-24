@@ -1,6 +1,5 @@
 package com.example.Major.Project.DTO;
 
-import com.example.Major.Project.Models.Package;
 import com.example.Major.Project.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,10 +22,10 @@ public class TrackingDTO {
 
     private Long packageId;
 
-    public TrackingDTO(String trackingNo, Status deliveryStatus) {
+    public TrackingDTO(String TrackingNo, Status deliveryStatus) {
     }
 
 
-    public TrackingDTO(String trackingNo, Status deliveryStatus, Date deliveryDate) {
+    public TrackingDTO(String TrackingNo, Status deliveryStatus, Date deliveryDate) {
     }
 }
